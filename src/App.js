@@ -1,0 +1,53 @@
+import { Landing, Login, NoMatch, List, View } from "./pages";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import { ListProvider } from "./contexts/ListContext";
+
+function App() {
+	const [isLogged, setIsLogged] = useState(window.localStorage.getItem("isLogged") === "true");
+  const [idPokemon, setIdPokemon] = useState("");
+
+	function onSuccess() {
+		setIsLogged(true);
+	}
+
+	function onLogout() {
+		setIsLogged(false);
+		window.localStorage.removeItem("isLogged");
+    window.localStorage.removeItem("name");
+    window.localStorage.removeItem("email");
+	}
+
+	return (
+		<>
+			<header>
+				<p>Pokemon App</p>
+			</header>
+			<BrowserRouter>
+        <ListProvider
+        value={{
+          isLogged,
+          onLogout,
+          onSuccess,
+          idPokemon,
+          setIdPokemon
+        }}
+        >
+          <Routes>
+            <Route path="/" element={isLogged ? <List /> : <Landing />} />
+            <Route path="/pokemon/:id" element={<View />}/>
+            <Route path="/login" element={<Login />} />
+            {/* 404 not found / no match */}
+            <Route path="*" element={<NoMatch />} />
+          </Routes>
+        </ListProvider>
+			</BrowserRouter>
+			<footer>
+				<p> &copy; 2022 Pokemon App - with Devlights BootCamp2022</p>
+        <p>All rights reserved</p>
+			</footer>
+		</>
+	);
+}
+
+export default App;
