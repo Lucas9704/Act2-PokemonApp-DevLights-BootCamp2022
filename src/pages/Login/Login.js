@@ -1,30 +1,29 @@
 import { useNavigate } from "react-router-dom";
 import { LoginForm } from "./LoginForm";
 // import { useDashboard } from "../../hooks/useDashboard";
-import "./Login.css";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { ListContext } from "../../contexts/ListContext";
 
-export default function Login( {onSuccess, isLogged} ) {
+import "./Login.css";
+
+export default function Login( ) {
 	const navigate = useNavigate();
+	const listContext = useContext(ListContext);
 	// const { onSuccess } = useDashboard();
 
-	/* 	function onLoginFormSuccess() {
+		function onLoginFormSuccess() {
+    listContext.onSuccess();
 		navigate("/");
-        onSuccess();
-	} */
-
-	function onSuccess() {
-    navigate("/")
 	}
 
-  useEffect(() => {if (!isLogged) {navigate("/");}});
+	useEffect(() => {if (listContext.isLogged) {navigate("/")}});
 
 	return ( 
     <>
-      <main className="Login">
+		<main className="Login">
 			<section className="LoginHeroContainer"></section>
 			<section className="LoginFormContainer">
-				<LoginForm onSuccess={onSuccess} />
+				<LoginForm onSuccess={onLoginFormSuccess} />
 			</section>
 		</main>
     </>
