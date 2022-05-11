@@ -1,0 +1,40 @@
+#pokemon {
+    width: 100px;
+    height: 100px;
+    border-radius: 5%;
+    margin: 10px;
+}
+
+.grid {
+    justify-content: center;
+}
+
+.buttonCard {
+    flex-direction: column;
+}
+
+.cardContent {
+    background-color: #0011ffdc;
+}
+
+.cardContent:hover {
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background-color: #eb4444;
+}
+
+.card {
+    margin: 15px;
+    border-color: rgb(75, 75, 75);
+    border-style: solid;
+    border-width: 3px;
+}
+
+.pagination {
+    justify-content: center;
+}
+
+p {
+    color: #fff;
+}

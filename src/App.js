@@ -2,6 +2,8 @@ import { Landing, Login, NoMatch, List, View } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import { ListProvider } from "./contexts/ListContext";
+import { NavBar } from "./components";
+import "./App.css";
 
 function App() {
 	const [isLogged, setIsLogged] = useState(window.localStorage.getItem("isLogged") === "true");
@@ -19,10 +21,8 @@ function App() {
 	}
 
 	return (
-		<>
-			<header>
-				<p>Pokemon App</p>
-			</header>
+		<section className="App">
+			<NavBar/>
 			<BrowserRouter>
         <ListProvider
         value={{
@@ -43,10 +43,10 @@ function App() {
         </ListProvider>
 			</BrowserRouter>
 			<footer>
-				<p> &copy; 2022 Pokemon App - with Devlights BootCamp2022</p>
-        <p>All rights reserved</p>
+				&copy; 2022 Pokemon App - with Devlights BootCamp2022
+        All rights reserved
 			</footer>
-		</>
+		</section>
 	);
 }
 

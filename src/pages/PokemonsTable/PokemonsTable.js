@@ -2,6 +2,9 @@ import { useContext } from "react";
 import { PokemonsContext } from "../../contexts/PokemonsContext";
 import { useNavigate } from "react-router";
 import { ListContext } from "../../contexts/ListContext";
+import { Card, CardMedia, CardContent, Typography, Button, Grid } from "@mui/material";
+import PaginationRounded from "./PaginationRounded";
+import './PokemonsTable.css'
 
 export function PokemonsTable() {
   const { pokemons } = useContext(PokemonsContext);
@@ -10,18 +13,27 @@ export function PokemonsTable() {
 
 
   return (
-      <ul>
+    <>
+      <PaginationRounded/>
+      <Grid container spacing={0} className="grid">
         {pokemons.map(({ name }, id) => (  // map through the pokemons array and return a list item for each pokemon
-          <li key={id}>
-            <button onClick={() => {
-              setIdPokemon(`${id}`);
-              navigate(`/pokemon/${id}`);
-            } }>
-              <h3>{name}</h3>
-              <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" + (Number(id) +1) +".svg"} alt={name} />
-            </button>
-          </li> // end of list item
+          <Card className="card">
+            <CardContent key={id} className="cardContent">
+              <Button className="buttonCard" onClick={() => {
+                setIdPokemon(`${id}`);
+                navigate(`/pokemon/${id}`);
+              } }>
+                <Typography component="p">{name}</Typography>
+                <CardMedia>
+                  <img id="pokemon" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" + (Number(id) +1) +".svg"} alt={name} />
+                </CardMedia>
+              </Button>
+            </CardContent>
+          </Card>
         ))}
-      </ul>
+      </Grid>
+      <PaginationRounded />
+    </>
+    
   );
 }

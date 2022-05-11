@@ -5,6 +5,7 @@ import { ListHeader } from "../ListHeader/ListHeader";
 import { useNavigate } from "react-router-dom";
 import { PokemonProvider } from "../../contexts/PokemonContext";
 import { PokemonCard } from "./PokemonCard";
+import "./View.css";
 
 export default function View() {
 	const [pokemon, setPokemon] = useState();

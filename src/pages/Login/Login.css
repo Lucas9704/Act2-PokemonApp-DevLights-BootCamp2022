@@ -6,7 +6,6 @@
 
 .LoginHeroContainer {
   flex: 1;
-  background-color: #2c73eb;
   display: flex;
   align-items: center;
   justify-content: center;
