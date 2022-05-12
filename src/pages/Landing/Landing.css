@@ -1,14 +1,35 @@
 .Landing {
     display: flex;
-    height: 100vh;
+    height: 86vh;
     color: white;
 }
 
 .LandingContainer {
     flex: 1;
-    background-color: #2C73EB;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 7px darkblue;
+    border-top-style: ridge;
+
+}
+
+.LandingHeroContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 600px;
+    background-color: rgb(5, 187, 81);
+    border-radius: 6px;
+    opacity: 0.8;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0;
 }

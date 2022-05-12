@@ -1,0 +1,15 @@
+ul {
+    margin:0;
+    justify-content: center;
+}
+
+.p {
+    font-size: 0.90rem;
+    line-height: 2;
+    text-transform: capitalize;
+}
+
+#img {
+    width: 300px;
+    height: 300px;
+}

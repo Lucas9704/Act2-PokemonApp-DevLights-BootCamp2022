@@ -2,6 +2,8 @@ import { Landing, Login, NoMatch, List, View } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import { ListProvider } from "./contexts/ListContext";
+import { NavBar } from "./components";
+import "./App.css";
 
 function App() {
 	const [isLogged, setIsLogged] = useState(window.localStorage.getItem("isLogged") === "true");
@@ -19,12 +21,8 @@ function App() {
 	}
 
 	return (
-		<>
-			<header>
-				<p>Pokemon App</p>
-			</header>
-			<BrowserRouter>
-        <ListProvider
+		<section className="App">
+      <ListProvider
         value={{
           isLogged,
           onLogout,
@@ -32,21 +30,23 @@ function App() {
           idPokemon,
           setIdPokemon
         }}
-        >
-          <Routes>
-            <Route path="/" element={isLogged ? <List /> : <Landing />} />
-            <Route path="/pokemon/:id" element={<View />}/>
-            <Route path="/login" element={<Login />} />
-            {/* 404 not found / no match */}
-            <Route path="*" element={<NoMatch />} />
-          </Routes>
-        </ListProvider>
-			</BrowserRouter>
+      >
+        <NavBar/>
+        <BrowserRouter >
+            <Routes>
+              <Route path="/" element={isLogged ? <List /> : <Landing />} />
+              <Route path="/pokemon/:id" element={<View />}/>
+              <Route path="/login" element={<Login />} />
+              {/* 404 not found / no match */}
+              <Route path="*" element={<NoMatch />} />
+            </Routes>
+        </BrowserRouter>
+      </ListProvider>
 			<footer>
-				<p> &copy; 2022 Pokemon App - with Devlights BootCamp2022</p>
-        <p>All rights reserved</p>
+				&copy; 2022 Pokemon App - with Devlights BootCamp2022
+        All rights reserved
 			</footer>
-		</>
+		</section>
 	);
 }
 

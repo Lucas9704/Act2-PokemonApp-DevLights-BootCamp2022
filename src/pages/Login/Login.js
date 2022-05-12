@@ -3,6 +3,7 @@ import { LoginForm } from "./LoginForm";
 // import { useDashboard } from "../../hooks/useDashboard";
 import { useContext, useEffect } from "react";
 import { ListContext } from "../../contexts/ListContext";
+import logo from "./icons/PokeDev.jpg";
 
 import "./Login.css";
 
@@ -21,8 +22,11 @@ export default function Login( ) {
 	return ( 
     <>
 		<main className="Login">
-			<section className="LoginHeroContainer"></section>
+			<section className="LoginHeroContainer">
+				<img src="" alt="PokeDev" />
+			</section>
 			<section className="LoginFormContainer">
+			<img src={logo} alt="PokeDev" />
 				<LoginForm onSuccess={onLoginFormSuccess} />
 			</section>
 		</main>
