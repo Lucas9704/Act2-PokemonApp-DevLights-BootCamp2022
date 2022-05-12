@@ -13,3 +13,7 @@ ul {
     width: 300px;
     height: 300px;
 }
+
+.ViewContainer {
+    min-height: 100vh;
+}

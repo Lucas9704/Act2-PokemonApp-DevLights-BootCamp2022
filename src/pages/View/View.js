@@ -1,10 +1,10 @@
 import { useContext, useState, useEffect } from "react";
 import { getPokemon } from "../../services/Pokemon";
 import { ListContext } from "../../contexts/ListContext";
-import { ListHeader } from "../ListHeader/ListHeader";
 import { useNavigate } from "react-router-dom";
 import { PokemonProvider } from "../../contexts/PokemonContext";
 import { PokemonCard } from "./PokemonCard";
+import { Typography } from "@mui/material";
 import "./View.css";
 
 export default function View() {
@@ -35,13 +35,15 @@ export default function View() {
 		<main className="View">
 			<section className="ViewContainer">
 				<section className="ViewHeader">
-					<ListHeader />
+				<Typography variant="overline" display="block" gutterBottom align="center" component="h1" fontSize="20px">
+					Pokemon selected as {pokemon.name}
+				</Typography>
 				</section>
-        <PokemonProvider value={{ pokemon, idPokemon }}>
-          <section className="ViewBody">
-            <PokemonCard />
-          </section>
-        </PokemonProvider>
+				<PokemonProvider value={{ pokemon, idPokemon }}>
+				<section className="ViewBody">
+					<PokemonCard />
+				</section>
+				</PokemonProvider>
 			</section>
 		</main>
 	);

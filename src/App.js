@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import { ListProvider } from "./contexts/ListContext";
 import { NavBar } from "./components";
+import {Typography} from "@mui/material";
 import "./App.css";
 
 function App() {
@@ -43,8 +44,12 @@ function App() {
         </BrowserRouter>
       </ListProvider>
 			<footer>
-				&copy; 2022 Pokemon App - with Devlights BootCamp2022
-        All rights reserved
+        <Typography lineHeight="1.5" variant="overline" display="block" gutterBottom fontSize="15px" m="0" align="center" color="black" fontWeight="bold">
+          &copy; 2022 Pokemon App - with Devlights BootCamp2022
+        </Typography>
+        <Typography lineHeight="1.5" variant="overline" display="block" gutterBottom fontSize="15px" m="0" align="center" color="black" fontWeight="bold"> 
+          All rights reserved
+        </Typography>
 			</footer>
 		</section>
 	);
