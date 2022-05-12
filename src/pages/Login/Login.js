@@ -23,9 +23,10 @@ export default function Login( ) {
     <>
 		<main className="Login">
 			<section className="LoginHeroContainer">
-				<img src="logo" alt="PokeDev" />
+				<img src="" alt="PokeDev" />
 			</section>
 			<section className="LoginFormContainer">
+			<img src={logo} alt="PokeDev" />
 				<LoginForm onSuccess={onLoginFormSuccess} />
 			</section>
 		</main>

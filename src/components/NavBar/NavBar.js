@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,13 +10,17 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import CardMedia from '@mui/material/CardMedia';
+import logo from './PokeDev.jpg';
+import { ListContext } from '../../contexts/ListContext';
+import avatar from './2.jpg';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['List Pokemons', 'List Location'];
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
+  const { onLogout } = useContext(ListContext);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -34,7 +38,7 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" color="error">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -52,9 +56,10 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            PokeDev
+            <CardMedia> 
+              <img src={logo} alt="PokeDev" />
+            </CardMedia>
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -64,7 +69,7 @@ function NavBar() {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-
+              
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -107,7 +112,9 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            PokeDev
+            <CardMedia> 
+              <img src={logo} alt="PokeDev" />
+            </CardMedia>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -124,7 +131,7 @@ function NavBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="P" src={avatar} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -143,11 +150,9 @@ function NavBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={handleCloseUserMenu}>
+                <Typography textAlign="center" onClick={onLogout} variant="button">Logout</Typography>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>

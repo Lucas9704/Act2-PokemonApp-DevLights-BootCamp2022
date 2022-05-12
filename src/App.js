@@ -22,9 +22,7 @@ function App() {
 
 	return (
 		<section className="App">
-			<NavBar/>
-			<BrowserRouter>
-        <ListProvider
+      <ListProvider
         value={{
           isLogged,
           onLogout,
@@ -32,16 +30,18 @@ function App() {
           idPokemon,
           setIdPokemon
         }}
-        >
-          <Routes>
-            <Route path="/" element={isLogged ? <List /> : <Landing />} />
-            <Route path="/pokemon/:id" element={<View />}/>
-            <Route path="/login" element={<Login />} />
-            {/* 404 not found / no match */}
-            <Route path="*" element={<NoMatch />} />
-          </Routes>
-        </ListProvider>
-			</BrowserRouter>
+      >
+        <NavBar/>
+        <BrowserRouter >
+            <Routes>
+              <Route path="/" element={isLogged ? <List /> : <Landing />} />
+              <Route path="/pokemon/:id" element={<View />}/>
+              <Route path="/login" element={<Login />} />
+              {/* 404 not found / no match */}
+              <Route path="*" element={<NoMatch />} />
+            </Routes>
+        </BrowserRouter>
+      </ListProvider>
 			<footer>
 				&copy; 2022 Pokemon App - with Devlights BootCamp2022
         All rights reserved

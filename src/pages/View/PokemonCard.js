@@ -27,7 +27,7 @@ export function PokemonCard() {
       alignItems: 'center',
     }}>
       <CardMedia>
-        <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" + (Number(idPokemon) + 1) + ".svg"} alt="poke"/>
+        <img id="img" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" + (Number(idPokemon) + 1) + ".svg"} alt="poke"/>
       </CardMedia>
       <CardContent>
         <Typography component="p" sx={{textTransform: 'capitalize'}}>{pokemon.name}</Typography>
