@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { PokemonsContext } from "../../contexts/PokemonsContext";
 import { useNavigate } from "react-router";
-import { ListContext } from "../../contexts/ListContext";
 import { Card, CardMedia, CardContent, Typography, Button, Grid } from "@mui/material";
 import PaginationRounded from "./PaginationRounded";
 import './PokemonsTable.css'
@@ -9,7 +8,6 @@ import './PokemonsTable.css'
 export function PokemonsTable() {
   const { pokemons } = useContext(PokemonsContext);
   const navigate = useNavigate();
-  const { setIdPokemon } = useContext(ListContext);
 
 
   return (
@@ -17,10 +15,9 @@ export function PokemonsTable() {
       <PaginationRounded/>
       <Grid container spacing={0} className="grid">
         {pokemons.map(({ name }, id) => (  // map through the pokemons array and return a list item for each pokemon
-          <Card className="card">
-            <CardContent key={id} className="cardContent">
+          <Card className="card" key={id}>
+            <CardContent className="cardContent">
               <Button className="buttonCard" onClick={() => {
-                setIdPokemon(`${id}`);
                 navigate(`/pokemon/${id}`);
               } }>
                 <Typography component="p">{name}</Typography>

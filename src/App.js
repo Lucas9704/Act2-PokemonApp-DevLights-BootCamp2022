@@ -8,7 +8,6 @@ import "./App.css";
 
 function App() {
 	const [isLogged, setIsLogged] = useState(window.localStorage.getItem("isLogged") === "true");
-  const [idPokemon, setIdPokemon] = useState("");
 
 	function onSuccess() {
 		setIsLogged(true);
@@ -28,8 +27,6 @@ function App() {
           isLogged,
           onLogout,
           onSuccess,
-          idPokemon,
-          setIdPokemon
         }}
       >
         <NavBar/>
@@ -48,7 +45,7 @@ function App() {
           &copy; 2022 Pokemon App - with Devlights BootCamp2022
         </Typography>
         <Typography lineHeight="1.5" variant="overline" display="block" gutterBottom fontSize="15px" m="0" align="center" color="black" fontWeight="bold"> 
-          All rights reserved
+          All rights reserved - Canteros Lucas
         </Typography>
 			</footer>
 		</section>
