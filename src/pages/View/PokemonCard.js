@@ -3,7 +3,7 @@ import { PokemonContext } from "../../contexts/PokemonContext";
 import { Card, CardMedia, CardContent, Typography} from "@mui/material";
 
 export function PokemonCard() {
-  const { pokemon, idPokemon } = useContext(PokemonContext);
+  const { pokemon, id } = useContext(PokemonContext);
 
   return (
     <Card sx={{
@@ -27,7 +27,7 @@ export function PokemonCard() {
       alignItems: 'center',
     }}>
       <CardMedia>
-        <img id="img" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" + (Number(idPokemon) + 1) + ".svg"} alt="poke"/>
+        <img id="img" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" + (Number(id) + 1) + ".svg"} alt="poke"/>
       </CardMedia>
       <CardContent>
         <Typography component="p" sx={{textTransform: 'capitalize'}}>{pokemon.name}</Typography>

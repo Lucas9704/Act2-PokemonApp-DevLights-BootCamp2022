@@ -5,16 +5,19 @@ import { useNavigate } from "react-router-dom";
 import { PokemonProvider } from "../../contexts/PokemonContext";
 import { PokemonCard } from "./PokemonCard";
 import { Typography } from "@mui/material";
+import { useParams } from "react-router-dom";
 import "./View.css";
 
 export default function View() {
 	const [pokemon, setPokemon] = useState();
-	const { idPokemon, isLogged } = useContext(ListContext);
+	const { isLogged } = useContext(ListContext);
   const navigate = useNavigate();
+  const { id } = useParams();
+
 
 	async function chargeObject() {
 		try {
-			const results = await getPokemon(String(Number(idPokemon) + 1));
+			const results = await getPokemon(String(Number(id) + 1));
 			setPokemon(results);
 		} catch (error) {
 			console.log(error);
@@ -39,7 +42,7 @@ export default function View() {
 					Pokemon selected as {pokemon.name}
 				</Typography>
 				</section>
-				<PokemonProvider value={{ pokemon, idPokemon }}>
+				<PokemonProvider value={{ pokemon, id }}>
 				<section className="ViewBody">
 					<PokemonCard />
 				</section>
