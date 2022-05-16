@@ -24,7 +24,7 @@ export default function View() {
 		}
 	}
 
-	useEffect(() => {chargeObject();}, []);
+	useEffect(() => {chargeObject();}, [id]);
 
   useEffect(() => {if (!isLogged) {navigate("/login")}});
 

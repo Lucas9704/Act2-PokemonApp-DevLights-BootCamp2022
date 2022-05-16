@@ -14,6 +14,7 @@ import CardMedia from '@mui/material/CardMedia';
 import logo from './PokeDev.jpg';
 import { ListContext } from '../../contexts/ListContext';
 import avatar from './2.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const pages = ['List Pokemons', 'List Location'];
 
@@ -21,6 +22,7 @@ function NavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const { onLogout } = useContext(ListContext);
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -37,23 +39,17 @@ function NavBar() {
     setAnchorElUser(null);
   };
 
+  const onClick = () => {
+    navigate('/');
+  }
+
   return (
     <AppBar position="static" color="error">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
+          <Typography onClick={onClick}
+          sx={{
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
             }}
           >
             <CardMedia> 
@@ -96,20 +92,10 @@ function NavBar() {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
+          <Typography onClick={onClick}
             sx={{
-              mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
             }}
           >
             <CardMedia> 
