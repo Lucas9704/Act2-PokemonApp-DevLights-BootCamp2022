@@ -29,15 +29,15 @@ function App() {
           onSuccess,
         }}
       >
-        <NavBar/>
         <HashRouter >
-            <Routes>
-              <Route path="/" element={isLogged ? <List /> : <Landing />} />
-              <Route path="/pokemon/:id" element={<View />}/>
-              <Route path="/login" element={<Login />} />
-              {/* 404 not found / no match */}
-              <Route path="*" element={<NoMatch />} />
-            </Routes>
+          <NavBar/>
+          <Routes>
+            <Route path="/" element={isLogged ? <List /> : <Landing />} />
+            <Route path="/pokemon/:id" element={<View />}/>
+            <Route path="/login" element={<Login />} />
+            {/* 404 not found / no match */}
+            <Route path="*" element={<NoMatch />} />
+          </Routes>
         </HashRouter>
       </ListProvider>
 			<footer>

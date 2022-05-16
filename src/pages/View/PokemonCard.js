@@ -1,11 +1,10 @@
 import { useContext } from "react";
 import { PokemonContext } from "../../contexts/PokemonContext";
 import { Grid, Card, CardMedia, CardContent, Typography} from "@mui/material";
-import backgroundImage from "./backgroundDex.png";
 
 export function PokemonCard() {
   const { pokemon, id } = useContext(PokemonContext);
-
+  console.log(pokemon);
   return (
     <Card sx={{
       bgcolor: '#0011ffdc',
@@ -26,7 +25,9 @@ export function PokemonCard() {
         },
     }}>
       <Card className="dex">
-        <Typography  fontSize="25px" fontWeight="bold" component="text" position="sticky" left="95%" p="3px" borderRadius="20px" backgroundColor="#ffffff" sx={{textTransform: 'capitalize' , color: 'black'}}>{pokemon.order}</Typography>
+        <Typography  fontSize="25px" fontWeight="bold" component="text" position="sticky" left="95%" p="5px" borderRadius="20px" backgroundColor="#dfca10" sx={{textTransform: 'capitalize' , color: 'black'}}>
+          {pokemon.order < 10 ? `00${pokemon.order}` : `0${pokemon.order}`}
+        </Typography>
         <CardMedia align="center">
           <img id="img" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" + (Number(id) + 1) + ".svg"} alt="poke"/>
         </CardMedia>
