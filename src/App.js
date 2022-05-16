@@ -1,5 +1,5 @@
 import { Landing, Login, NoMatch, List, View } from "./pages";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import { ListProvider } from "./contexts/ListContext";
 import { NavBar } from "./components";
@@ -30,7 +30,7 @@ function App() {
         }}
       >
         <NavBar/>
-        <BrowserRouter >
+        <HashRouter >
             <Routes>
               <Route path="/" element={isLogged ? <List /> : <Landing />} />
               <Route path="/pokemon/:id" element={<View />}/>
@@ -38,7 +38,7 @@ function App() {
               {/* 404 not found / no match */}
               <Route path="*" element={<NoMatch />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </ListProvider>
 			<footer>
         <Typography lineHeight="1.5" variant="overline" display="block" gutterBottom fontSize="15px" m="0" align="center" color="black" fontWeight="bold">
