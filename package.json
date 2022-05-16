@@ -1,4 +1,5 @@
 {
+  "homepage": "https://lucas9704.github.io/Act2-PokemonApp-DevLights-BootCamp2022",
   "name": "pokemon-app",
   "version": "0.1.0",
   "private": true,
@@ -39,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
