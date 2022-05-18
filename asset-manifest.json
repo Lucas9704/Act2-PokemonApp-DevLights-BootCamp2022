@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Act2-PokemonApp-DevLights-BootCamp2022/static/css/main.11e8810f.css",
-    "main.js": "/Act2-PokemonApp-DevLights-BootCamp2022/static/js/main.93944c5d.js",
-    "static/js/787.a8fe51ff.chunk.js": "/Act2-PokemonApp-DevLights-BootCamp2022/static/js/787.a8fe51ff.chunk.js",
-    "static/media/background.jpg": "/Act2-PokemonApp-DevLights-BootCamp2022/static/media/background.fb7719fd5e5157713a95.jpg",
-    "static/media/2.jpg": "/Act2-PokemonApp-DevLights-BootCamp2022/static/media/2.dd96a04079a350341dca.jpg",
-    "static/media/backgroundDex.png": "/Act2-PokemonApp-DevLights-BootCamp2022/static/media/backgroundDex.f6e254aaec8fb36602e3.png",
-    "index.html": "/Act2-PokemonApp-DevLights-BootCamp2022/index.html",
-    "main.11e8810f.css.map": "/Act2-PokemonApp-DevLights-BootCamp2022/static/css/main.11e8810f.css.map",
-    "main.93944c5d.js.map": "/Act2-PokemonApp-DevLights-BootCamp2022/static/js/main.93944c5d.js.map",
-    "787.a8fe51ff.chunk.js.map": "/Act2-PokemonApp-DevLights-BootCamp2022/static/js/787.a8fe51ff.chunk.js.map"
+    "main.css": "/act2-pokemon-app-devlights-bootcamp2022/static/css/main.dec269bb.css",
+    "main.js": "/act2-pokemon-app-devlights-bootcamp2022/static/js/main.d37d47cd.js",
+    "static/js/787.a8fe51ff.chunk.js": "/act2-pokemon-app-devlights-bootcamp2022/static/js/787.a8fe51ff.chunk.js",
+    "static/media/background.jpg": "/act2-pokemon-app-devlights-bootcamp2022/static/media/background.fb7719fd5e5157713a95.jpg",
+    "static/media/2.jpg": "/act2-pokemon-app-devlights-bootcamp2022/static/media/2.dd96a04079a350341dca.jpg",
+    "static/media/backgroundDex.png": "/act2-pokemon-app-devlights-bootcamp2022/static/media/backgroundDex.f6e254aaec8fb36602e3.png",
+    "index.html": "/act2-pokemon-app-devlights-bootcamp2022/index.html",
+    "main.dec269bb.css.map": "/act2-pokemon-app-devlights-bootcamp2022/static/css/main.dec269bb.css.map",
+    "main.d37d47cd.js.map": "/act2-pokemon-app-devlights-bootcamp2022/static/js/main.d37d47cd.js.map",
+    "787.a8fe51ff.chunk.js.map": "/act2-pokemon-app-devlights-bootcamp2022/static/js/787.a8fe51ff.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.11e8810f.css",
-    "static/js/main.93944c5d.js"
+    "static/css/main.dec269bb.css",
+    "static/js/main.d37d47cd.js"
   ]
 }
